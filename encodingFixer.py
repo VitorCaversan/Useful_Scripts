@@ -115,7 +115,6 @@ def find_by_list(text : str ,tags: list):
 
 
 # Where all the directory running, and file picking, happens
-# Files Idiomas.h and Idiomas.c must be opened with windows 1252 encoding and then saved with utf-8 encoding
 for root, direcs, files in os.walk(os.path.dirname(__file__)):
    for dir in direcs:
       currentDir = root + os.sep + dir
@@ -123,12 +122,12 @@ for root, direcs, files in os.walk(os.path.dirname(__file__)):
       for filename in os.listdir(currentDir):
          filePath = os.path.join(currentDir, filename)
          #print(filePath)
-         if filePath.endswith(('Teclado.c', 'NavegacaoTela.c', 'TemplatesDesenho.c', 'ConfiguracoesPiloto.c')) == False:  
+         if filePath.endswith(('Files.c', 'You.c', 'DontWantTo.c', 'Open.c')) == False:  
             if filePath.endswith(".h") or filePath.endswith(".c"):
                try:
-                  if filePath.endswith(('DashboardComunicacao.c', 'MotorEletronico.c', 'ConfiguracoesAdubacao.c', 'ConfiguracoesMemoriaTela.c', 'ConfiguracoesPiloto.h', 'ConfiguracoesPulverizacao.c', 'ConfiguracoesPulverizacao.h', 'HorimetrosEquipTela.c', 'BalancaAD.c')):
+                  if filePath.endswith(('Files.c', 'You.c', 'WantToOpen.c', 'With.c', 'UTF-8.h', 'Encoding.c')):
                      fileContent = open(filePath, encoding='utf-8').read()
-                  elif filePath.endswith(('Idiomas.c', 'Idiomas.h')):
+                  elif filePath.endswith('Files.c', 'You.c', 'WantToOpen.c', 'With.c', 'Windows-1252.h', 'Encoding.c'):
                      fileContent = open(filePath, encoding='cp1252').read()
                   else:
                      fileContent = open(filePath).read()
@@ -138,4 +137,4 @@ for root, direcs, files in os.walk(os.path.dirname(__file__)):
 
                   open(filePath, mode='w', encoding='utf-8').write(fileContent)
                except:
-                  print('-----------------------' + filename)
+                  print('-----------------------' + filename) # Prints files that couldn't be opened
