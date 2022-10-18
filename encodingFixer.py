@@ -9,30 +9,33 @@ def replace_2bars_SpecialChars(raw_text : str):
 
    for line in raw_text.split('\n'):
       if line.find('//') != -1:
+         line = line.replace('Ã§Ãµ', 'co').replace('Ã§Ã£', 'ca').replace('Ã¡', 'a').replace('Ã£', 'a').replace('Ã¢', 'a').replace('Ã³', 'o').replace('Ã§', 'c')
          line = line.replace('á', 'a').replace('à', 'a').replace('ã', 'a').replace('â', 'a').replace('Á', 'A').replace('À', 'A').replace('Ã', 'A').replace('Â', 'A')
          line = line.replace('é', 'e').replace('ê', 'e').replace('É', 'E').replace('Ê', 'E')
          line = line.replace('í', 'i').replace('Í', 'I')
          line = line.replace('ó', 'o').replace('ô', 'o').replace('õ', 'o').replace('Ó', 'O').replace('Ô', 'O').replace('Õ', 'O')
          line = line.replace('ú', 'u').replace('Ú', 'U')
          line = line.replace('ç', 'c').replace('Ç', 'C')
-         line = line.replace('°', 'graus')
          line = line.replace('±', '+ou-')
-         line = line.replace('Ã§Ãµ', 'co')
+         line = line.replace('AcAa', 'ca').replace('AcAo', 'co')
          line = line.replace('A¡', 'a').replace('A£', 'a').replace('A¢', 'a').replace('Aƒ', 'A')
-         line = line.replace('Aª', 'e').replace('A©', 'e')
-         line = line.replace('tA­t', 'tit').replace('rA­m', 'rim').replace('nA­c', 'nic')
-         line = line.replace('A³', 'o').replace('Aµ', 'o').replace('A”', 'O')
-         line = line.replace('A§', 'c').replace('ח', 'c').replace('A‡', 'C')
+         line = line.replace('Aª', 'e').replace('A©', 'e').replace('A¨', 'e').replace('Ae ', 'e ')
+         line = line.replace('A³', 'o').replace('Aµ', 'o').replace('A”', 'O').replace('A“', 'O').replace('CA•', 'CO').replace('mAori', 'mori').replace('AA´', 'o').replace('A´', 'o').replace('mAodulo', 'modulo')
+         line = line.replace('Aº', 'u').replace('NAum', 'num').replace('nAumero', 'numero')
+         line = line.replace('A§', 'c').replace('ח', 'c').replace('A‡', 'C').replace('espaAcamento', 'espacamento').replace('balanAca', 'balanca').replace('licenAcas', 'licencas')
+         line = line.replace('tA­v', 'tiv').replace('nA­v', 'niv').replace('diAametro', 'diametro').replace('mAaxima', 'maxima').replace('hAa', 'ha').replace('horAario', 'horario').replace('vAalvula', 'valvula').replace('vazAao', 'vazao').replace('pressAao', 'pressao').replace('serAa', 'sera').replace('estAao', 'estao').replace('parAametro', 'parametros').replace('nAao', 'nao').replace('NAÆ’O', 'NAO').replace('botAao', 'botao').replace('terAa', 'tera').replace('cAalculo', 'calculo').replace('Aarea', 'area').replace('licenAca', 'licenca').replace('mAaquina', 'maquina')
+         line = line.replace('tA­t', 'tit').replace('rA­m', 'rim').replace('nA­c', 'nic').replace('aA­d','aid').replace('A­ndi', 'indi').replace('iA­fi', 'ifi').replace('eA­c', 'eic').replace('lAA­go', 'ligo').replace('nAA­vel', 'nivel').replace('mAA­nimo', 'minimo')
          line = line.replace('חד', 'ca')
          line = line.replace('ב', 'a').replace('ד', 'a').replace('ג', 'a')
          line = line.replace('ם', 'i')
          line = line.replace('ף', 'o').replace('ץ', 'o')
+         line = line.replace('°', 'graus')
 
       if firstLine == True:
          return_text += line
          firstLine = False
       else:
-         return_text += '\n' + line   
+         return_text += '\n' + line
 
    return return_text
 
@@ -56,24 +59,27 @@ def replace_bars_star_SpecialChars(raw_text : str):
       
       
       if found_start == True or found_end == True:
+         line = line.replace('Ã§Ãµ', 'co').replace('Ã§Ã£', 'ca').replace('Ã¡', 'a').replace('Ã£', 'a').replace('Ã¢', 'a').replace('Ã³', 'o').replace('Ã§', 'c')
          line = line.replace('á', 'a').replace('à', 'a').replace('ã', 'a').replace('â', 'a').replace('Á', 'A').replace('À', 'A').replace('Ã', 'A').replace('Â', 'A')
          line = line.replace('é', 'e').replace('ê', 'e').replace('É', 'E').replace('Ê', 'E')
          line = line.replace('í', 'i').replace('Í', 'I')
          line = line.replace('ó', 'o').replace('ô', 'o').replace('õ', 'o').replace('Ó', 'O').replace('Ô', 'O').replace('Õ', 'O')
          line = line.replace('ú', 'u').replace('Ú', 'U')
          line = line.replace('ç', 'c').replace('Ç', 'C')
-         line = line.replace('°', 'graus')
          line = line.replace('±', '+ou-')
-         line = line.replace('Ã§Ãµ', 'co')
+         line = line.replace('AcAa', 'ca').replace('AcAo', 'co')
          line = line.replace('A¡', 'a').replace('A£', 'a').replace('A¢', 'a').replace('Aƒ', 'A')
-         line = line.replace('Aª', 'e').replace('A©', 'e')
-         line = line.replace('tA­t', 'tit').replace('rA­m', 'rim').replace('nA­c', 'nic')
-         line = line.replace('A³', 'o').replace('Aµ', 'o').replace('A”', 'O')
-         line = line.replace('A§', 'c').replace('ח', 'c').replace('A‡', 'C')
+         line = line.replace('Aª', 'e').replace('A©', 'e').replace('A¨', 'e').replace('Ae ', 'e ')
+         line = line.replace('A³', 'o').replace('Aµ', 'o').replace('A”', 'O').replace('A“', 'O').replace('CA•', 'CO').replace('mAori', 'mori').replace('AA´', 'o').replace('A´', 'o').replace('mAodulo', 'modulo')
+         line = line.replace('Aº', 'u').replace('NAum', 'num').replace('nAumero', 'numero')
+         line = line.replace('A§', 'c').replace('ח', 'c').replace('A‡', 'C').replace('espaAcamento', 'espacamento').replace('balanAca', 'balanca').replace('licenAcas', 'licencas')
+         line = line.replace('tA­v', 'tiv').replace('nA­v', 'niv').replace('diAametro', 'diametro').replace('mAaxima', 'maxima').replace('hAa', 'ha').replace('horAario', 'horario').replace('vAalvula', 'valvula').replace('vazAao', 'vazao').replace('pressAao', 'pressao').replace('serAa', 'sera').replace('estAao', 'estao').replace('parAametro', 'parametros').replace('nAao', 'nao').replace('NAÆ’O', 'NAO').replace('botAao', 'botao').replace('terAa', 'tera').replace('cAalculo', 'calculo').replace('Aarea', 'area').replace('licenAca', 'licenca').replace('mAaquina', 'maquina')
+         line = line.replace('tA­t', 'tit').replace('rA­m', 'rim').replace('nA­c', 'nic').replace('aA­d','aid').replace('A­ndi', 'indi').replace('iA­fi', 'ifi').replace('eA­c', 'eic').replace('lAA­go', 'ligo').replace('nAA­vel', 'nivel').replace('mAA­nimo', 'minimo')
          line = line.replace('חד', 'ca')
          line = line.replace('ב', 'a').replace('ד', 'a').replace('ג', 'a')
          line = line.replace('ם', 'i')
          line = line.replace('ף', 'o').replace('ץ', 'o')
+         line = line.replace('°', 'graus')
 
       if found_start == True and found_end == True:
          found_start = False
