@@ -12,3 +12,10 @@ Creates a new directory with all images in the given directory resized to (orign
 The images are saved in the .bmp format.
 
 Syntax: python3 image_resizer.py \<directory path with all the images\>
+
+## Function Occurrences Counter - count_funcs.py
+Takes a header (.h) file and counts how many occurences of each funtion are there in the given source directory.
+It prints the name of all functions that have less than 3 occurrences in the code, meaning that it only has it's declaration and it's definition on the header (.h) and main (.c) files, respectively.
+
+Syntax: python3 count_funcs.py \<source project directory path\> \<name of the .h file\>
+Ex: python3 count_funcs.py C:\Users\user\Documents\Coding\Project HelloWorld.h
