@@ -1,4 +1,10 @@
-#!/usr/bin/env python2
+"""
+count_funcs.py
+João Vitor Caversan
+Given a header file (.h), it prints the name of all functions that have less than
+3 occurrences in the source path
+"""
+
 import os
 import re
 import sys
@@ -26,8 +32,7 @@ except:
 externFuncs = []
 codefiles = []
 for root, dirnames, filenames in os.walk(source):
-   for filename in filter(lambda s: (s.endswith(".c") or s.endswith(".h")) and
-                                    not(s.endswith("MemoriaLegado.c") or s.endswith("MemoriaLegado.h")), filenames):
+   for filename in filter(lambda s: (s.endswith(".c") or s.endswith(".h"))), filenames):
       if (filename.endswith(base_file)):
          filePath = os.path.join(root, filename)
          externFuncs = getExternFunctions(open(filePath).read())
