@@ -1,28 +1,37 @@
 """
 workTimeCalc.py
 João Vitor Caversan
-Given a PDF work time sheet, it sums the positive worked hours and subtracts the negative ones.
+Given a .pdf work time sheet, it sums the positive worked hours and subtracts the negative ones.
 All the data is printed in the process.
 
 Replace positiveIdentifier and negativeIdentifier with the respective strings that identify your
 positive and negative balances.
 """
 
-# Libraries to import: 
-# pip install PyPDF2
+"""
+Libraries to import:
+pip install pdfplumber
+OR
+python3 -m pip install pdfplumber
+"""
 
 import sys
+import pdfplumber
+
+def read_pdf(file_path):
+   with pdfplumber.open(file_path) as pdf:
+      text = ""
+      for page in pdf.pages:
+         text += page.extract_text()
+      return text
 
 try:
    scriptname, source = sys.argv
 except:
-   print( """Invalid arguments passed. Usage:\n scriptname.py source-path""")
+   print( """Invalid arguments passed. Usage:\npython3 scriptname.py file\path\without\white\spaces""")
    sys.exit()
 
-externFuncs = []
-codefiles = []
-
-fileContent = open(source).read()
+fileContent = read_pdf(source)
 
 positiveIdentifier = "Lancto Positivo Ban"
 negativeIdentifier = "Lancto Negativo Ban"
