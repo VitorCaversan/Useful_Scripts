@@ -19,3 +19,10 @@ It prints the name of all functions that have less than 3 occurrences in the cod
 
 Syntax: python3 count_funcs.py \<source project directory path\> \<name of the .h file\>
 Ex: python3 count_funcs.py C:\Users\user\Documents\Coding\Project HelloWorld.h
+
+## Worked time calculator for a time spread sheet - workTimeCalc.py
+Given a .txt work time sheet, it sums the positive worked hours and subtracts the negative ones.
+All the data is printed in the process.
+
+Syntax: python3 workTimeCalc.py \<time sheet directory path\>
+Ex: python3 workTimeCalc.py C:\Users\user\Documents\Coding\Project\timeSheet.txt
